@@ -1478,7 +1478,7 @@ def main():
           f"results_{cla}_{user}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
           mime="text/csv")
 
-    col_1, col_2, col_3 = st.columns(3)
+    col_1, col_2, col_3 = st.columns([5,2,2])
 
     with col_1:
 
