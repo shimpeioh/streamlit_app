@@ -1298,7 +1298,7 @@ def question_create(seed: int, qclass: str):
 
 def main():
 
-  st.title("アプリ")
+  st.title("プレテストアプリ")
 
   #st.set_option()
 
