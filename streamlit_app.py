@@ -1212,7 +1212,7 @@ s1q115 = [
 
 
 
-test_class = ["振動2級", "固体2級"]
+test_class = ["振動2級", "固体2級",  "固体1級( 仮 )"]
 
 
 def question_create(seed: int, qclass: str):
@@ -1254,6 +1254,24 @@ def question_create(seed: int, qclass: str):
     q = q + random.sample(s2q2, 5)
     q = q + random.sample(s2q2, 4)
     q = q + random.sample(s2q2, 3)
+
+  elif qclass == test_class[2]:
+
+    q = q + random.sample(s1q1, 4)
+    q = q + random.sample(s1q2, 7)
+    q = q + random.sample(s1q3, 4)
+    q = q + random.sample(s1q4, 3)
+    q = q + random.sample(s1q5, 6)
+    q = q + random.sample(s1q6, 5)
+    q = q + random.sample(s1q7, 3)
+    q = q + random.sample(s1q8, 4)
+    q = q + random.sample(s1q9, 3)
+    q = q + random.sample(s1q10, 5)
+    q = q + random.sample(s1q111, 1)
+    q = q + random.sample(s1q112, 1)
+    q = q + random.sample(s1q113, 1)
+    q = q + random.sample(s1q114, 2)
+    q = q + random.sample(s1q115, 1)
 
   title = []
 
@@ -1344,8 +1362,10 @@ def main():
   def rerun():
 
     st.rerun()
-
-  size = 70
+      
+  size = 70    
+  if st.session_state.qclass == test_class[2]
+      size = 50
 
   if st.session_state.pages >= 1:
 
