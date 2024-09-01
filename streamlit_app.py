@@ -1364,7 +1364,7 @@ def main():
     st.rerun()
       
   size = 70    
-  if st.session_state.qclass == test_class[2]
+  if st.session_state.qclass == test_class[2]:
       size = 50
 
   if st.session_state.pages >= 1:
