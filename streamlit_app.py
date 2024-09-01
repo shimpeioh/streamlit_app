@@ -1345,7 +1345,7 @@ def main():
 
     st.rerun()
 
-  size = 12
+  size = 70
 
   if st.session_state.pages >= 1:
 
