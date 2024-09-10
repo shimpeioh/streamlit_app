@@ -1557,21 +1557,18 @@ def main():
     ページネーション用の関数( 次のページへ )
     """
     st.session_state.pages += 1
-    st.rerun()
 
   def decrease():
     """
     ページネーション用の関数( 前のページへ )
     """
     st.session_state.pages -= 1
-    st.rerun()
 
   def select(page: int):
     """
     ページネーション用の関数( 指定のページへ )
     """
     st.session_state.pages = page
-    st.rerun()
 
   def finish_test():
     """
@@ -1629,7 +1626,7 @@ def main():
       else:
         st.session_state.answer[st.session_state.pages] = [radio, 0]
 
-    current_q = st.radio(label=f"問題 : {q[i]['q']}",
+    st.radio(label=f"問題 : {q[i]['q']}",
                          options=q[i]["s"],
                          index=select_index,
                          horizontal=True,
