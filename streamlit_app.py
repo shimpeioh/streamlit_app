@@ -1664,7 +1664,7 @@ def main():
     for row in st.session_state.answer:
       score += st.session_state.answer[row][1]
     st.subheader(f"点数 : {str(score)} / {size}")
-    logger.info("Finish_Test : ", st.session_state.user, ", ", st.session_state.qclass, ", ", f"{str(score)} / {size}")
+    logger.info(f"Finish_Test : {st.session_state.user}, {st.session_state.qclass} ,{str(score)} / {size}")
       
     # 結果をCSVファイルでダウンロード
     if st.button("結果をCSVファイルでダウンロード"):
