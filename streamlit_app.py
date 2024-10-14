@@ -2,6 +2,8 @@ import io
 import random
 from datetime import datetime
 import logging
+from datetime import datetime
+import pytz
 
 import pandas as pd
 import streamlit as st
@@ -9,6 +11,9 @@ import streamlit as st
 # ログの設定
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+tz = pytz.timezone('Asia/Tokyo')  # 東京のタイムゾーンを指定
+
 
 # 固体２級用の出題内容
 
@@ -1664,7 +1669,8 @@ def main():
     for row in st.session_state.answer:
       score += st.session_state.answer[row][1]
     st.subheader(f"点数 : {str(score)} / {size}")
-    logger.info(f"Finish_Test : {st.session_state.user}, {st.session_state.qclass} ,{str(score)} / {size}")
+    current_time = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
+    logger.info(f"{current_time} Finish_Test : {st.session_state.user}, {st.session_state.qclass} ,{str(score)} / {size}")
       
     # 結果をCSVファイルでダウンロード
     if st.button("結果をCSVファイルでダウンロード"):
